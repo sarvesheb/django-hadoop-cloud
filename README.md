@@ -11,7 +11,9 @@ Hadoop 2.7.6
 
 ## How to Use
 Hadoop must be installed system-wide.
-`hadoop` Environment variable must be setup.
+
+
+`hadoop` Environment variable must be exist.
 
 All the necessary nodes such as `Hadoop daemons, the NameNode, DataNodes, the jobtracker and tasktrackers` must be initialized before the Django server is run
 (use start-all.sh or start-all.bat to do this process)
