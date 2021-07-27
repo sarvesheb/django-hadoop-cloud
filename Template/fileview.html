@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<style>
+	.btn {
+    background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #00609c);
+  background-image: -moz-linear-gradient(top, #000000, #00609c);
+  background-image: -ms-linear-gradient(top, #000000, #00609c);
+  background-image: -o-linear-gradient(top, #000000, #00609c);
+  background-image: linear-gradient(to bottom, #000000, #00609c);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #cddfeb;
+  background-image: -webkit-linear-gradient(top, #cddfeb, #3498db);
+  background-image: -moz-linear-gradient(top, #cddfeb, #3498db);
+  background-image: -ms-linear-gradient(top, #cddfeb, #3498db);
+  background-image: -o-linear-gradient(top, #cddfeb, #3498db);
+  background-image: linear-gradient(to bottom, #cddfeb, #3498db);
+  text-decoration: none;
+}
+</style>
+<body >
+  <div style="display:inline-block;border-radius: 25px">
+<h1 style="color:white;font-style:Sans-serif;font-color:white"> Your files: </h1>
+</div><br>
+{% for file in all_files %}
+<a style="color:white;font-size:30px" href="{{file.file_url}}">{{file.file_name}}</a>
+
+
+<form action="/action_page.php" method="get" id="nameform">
+  <br>
+ <button class="btn" formaction="/delete/{{file.file_name}}" formmethod="POST" type="submit">Delete</button>{% csrf_token %} <br>
+</form>
+
+<br><br>
+
+
+
+</body>
+
+
+
+{% endfor %}
+
+
+{% endblock %}
+

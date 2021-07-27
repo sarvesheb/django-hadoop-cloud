@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<style>
+		
+
+.form_class{
+margin-right: 45%;
+margin-left: 45%;
+}
+
+.defcl{
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #00609c);
+  background-image: -moz-linear-gradient(top, #000000, #00609c);
+  background-image: -ms-linear-gradient(top, #000000, #00609c);
+  background-image: -o-linear-gradient(top, #000000, #00609c);
+  background-image: linear-gradient(to bottom, #000000, #00609c);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.file-input label {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #00609c);
+  background-image: -moz-linear-gradient(top, #000000, #00609c);
+  background-image: -ms-linear-gradient(top, #000000, #00609c);
+  background-image: -o-linear-gradient(top, #000000, #00609c);
+  background-image: linear-gradient(to bottom, #000000, #00609c);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.file {
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+  position: absolute;
+}
+.file-input:hover {
+  background: #000000;
+  background-image: -webkit-linear-gradient(top, #000000, #000000);
+  background-image: -moz-linear-gradient(top, #000000, #000000);
+  background-image: -ms-linear-gradient(top, #000000, #000000);
+  background-image: -o-linear-gradient(top, #000000, #000000);
+  background-image: linear-gradient(to bottom, #000000, #000000);
+  text-decoration: none;
+}
+.back{
+background-repeat: #faf2da;
+ 
+}
+</style>
+
+<body class="back">
+ 
+ 
+
+<center style="margin-top: 10%">
+  <div class=" form_class ">
+<form method="POST"   enctype="multipart/form-data" action="/upload_file/">{% csrf_token %}
+  <input  type="file" id="file" name="filename"  class="file">
+  <label class= "defcl" for="file">Select file</label>
+
+  <div style="margin-top: 40px">
+
+		 <input  class="defcl" type="submit" class="active">	
+					</div>
+ 
+</form> 
+</div>
+</center>
+
+{% endblock %}
+
